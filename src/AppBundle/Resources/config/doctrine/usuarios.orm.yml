@@ -1,0 +1,35 @@
+AppBundle\Entity\usuarios:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\usuariosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        usuario:
+            type: string
+            length: '10'
+        apellidoPaterno:
+            type: string
+            length: '20'
+            column: apellido_paterno
+        apellidoMaterno:
+            type: string
+            length: '20'
+            column: apellido_materno
+        edad:
+            type: string
+            length: '20'
+    manyToOne:
+        direcciones:
+            targetEntity: direcciones
+            cascade: [persist]
+            invesedBy: users
+            joincolumn:
+                name: id
+                referencedColumnName: id
+                onDelete: CASCADE
+    lifecycleCallbacks: {  }

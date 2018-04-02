@@ -1,0 +1,24 @@
+direcciones_index:
+    path:     /
+    defaults: { _controller: "AppBundle:direcciones:index" }
+    methods:  GET
+
+direcciones_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:direcciones:show" }
+    methods:  GET
+
+direcciones_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:direcciones:new" }
+    methods:  [GET, POST]
+
+direcciones_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:direcciones:edit" }
+    methods:  [GET, POST]
+
+direcciones_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:direcciones:delete" }
+    methods:  DELETE

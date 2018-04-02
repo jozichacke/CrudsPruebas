@@ -1,0 +1,40 @@
+AppBundle\Entity\direcciones:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\direccionesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        codigoPostal:
+            type: integer
+            column: CodigoPostal
+        calle:
+            type: string
+            length: '20'
+            column: Calle
+        numeroExterior:
+            type: integer
+            nullable: true
+            column: NumeroExterior
+        numeroInterior:
+            type: string
+            length: '20'
+            nullable: true
+            column: NumeroInterior
+        delegacion:
+            type: string
+            length: '20'
+            column: Delegacion
+        colonia:
+            type: string
+            length: '20'
+            column: Colonia
+    oneToMany:
+        users:
+            targetEntity: usuarios
+            mappedBy: direcciones
+    lifecycleCallbacks: {  }
